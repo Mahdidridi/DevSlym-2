@@ -14,3 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::inertia('/test','Test');
+
+Route::inertia('/cong','Cong');
+
+Route::fallback(function () {
+    return Inertia::render('NotFound');
+});
+
