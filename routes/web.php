@@ -19,7 +19,7 @@ Route::inertia('/test','Test');
 
 Route::inertia('/cong','Cong');
 
-Route::fallback(function () {
-    return Inertia::render('NotFound');
-});
+// Route::fallback(function () {
+//     return Inertia::render('NotFound');
+// });
 
