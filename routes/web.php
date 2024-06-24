@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +20,7 @@ Route::inertia('/test','Test');
 
 Route::inertia('/cong','Cong');
 
-// Route::fallback(function () {
-//     return Inertia::render('NotFound');
-// });
+Route::fallback(function () {
+    return Inertia::render('NotFound');
+});
 

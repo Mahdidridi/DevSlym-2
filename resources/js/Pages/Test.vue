@@ -159,7 +159,7 @@
                         </div>
                     </div>
                     <div class="bg-white h-[18px] w-full rounded-full relative">
-                        <div class="bg-gradient-to-r from-light_blue to-dark_blue h-[10px] w-[50%] absolute left-0 top-[50%] translate-y-[-50%] rounded-full"></div>
+                        <div class="bg-gradient-to-r from-light_blue to-dark_blue h-[10px] w-[50%] ml-1 absolute left-0 top-[50%] translate-y-[-50%] rounded-full"></div>
                     </div>
                 </div>
 
