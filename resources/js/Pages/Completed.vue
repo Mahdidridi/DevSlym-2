@@ -29,7 +29,7 @@
                 </div>
                 
             </div>
-            <button @click="handleDone" class="z-50 font-[700] w-full text-sm bg-gradient-to-r from-light_blue to-dark_blue py-4 rounded-xl text-center text-white">Done</button>
+            <button @click="handleDone" class="z-50 font-[700] shadow-md w-full text-sm bg-gradient-to-r from-light_blue to-dark_blue py-4 rounded-xl text-center text-white">Done</button>
 
         </div>
     

@@ -148,7 +148,7 @@
                 <div class="bg-[#175265] bg-opacity-5 w-[40px] h-[40px] flex items-center justify-center rounded-xl">
                     <i class="fa-solid fa-chevron-left"></i>
                 </div>
-                <h3 class="text-[16px] text-[#1C192B] font-[600]">Messages</h3>
+                <h3 class="text-[15px] text-[#1C192B] font-[600]">Messages</h3>
             </div>
           <!-- <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="Your Company" /> -->
           <div class="flex items-center gap-x-8">
@@ -360,7 +360,7 @@
        
       </div>
 
-      <!-- <Earned :iscompleted="task2.completed"/> -->
+      <Earned :iscompleted="task2.completed"/>
       <Completed :iscompleted="task1.completed"/>
     </div>
 
