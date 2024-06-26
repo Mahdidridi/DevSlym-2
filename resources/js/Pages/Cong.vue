@@ -25,7 +25,7 @@
         <div class="flex items-center justify-between">
             <h3 class="text-semibold font-semibold text-bg_dark_gray">Total XP earned</h3>
             <div>
-
+                
             </div>
         </div>
      
