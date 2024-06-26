@@ -11,10 +11,11 @@
         <div class="relative tooltip flex py-1 flex-col items-start w-full">
             <div class="rounded-2xl px-4 z-40 py-1 text-white" :class="bgColor">
               <i class="fa-solid text-lg fa-inbox"></i>
-              <span class="text-sm ml-2">Vivateck</span>
+              <span class="text-sm ml-2">{{ Name || "Vivatech" }}</span>
             </div>
             <div class="mt-4 z-40">
-              <p class="text-[16px] text-[#25213E]">Hello <span class=" font-semibold">{{ Name }} </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it's was <br/> pleasure to meet you at Vivatech.</p>
+              <p class="text-[16px] text-[#25213E]">
+                Hello <span class=" font-semibold">{FirstName} </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it's was <br/> pleasure to meet you at Vivatech.</p>
             </div>
             <div class="w-full h-full absolute top-[20px] left-0 z-30 bg-white"></div>
             <div class="arrow-tooltip z-10 border shadow-lg"></div>

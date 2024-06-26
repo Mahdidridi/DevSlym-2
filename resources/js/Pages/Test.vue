@@ -145,7 +145,7 @@
       <header class="shrink-0 border-gray-200">
         <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-4 lg:px-4">
             <div class="flex items-center ml-4 gap-x-4 ">
-                <div class="bg-[#175265] bg-opacity-5 w-[40px] h-[40px] flex items-center justify-center rounded-xl">
+                <div @click="showSidebar" class="bg-[#175265] cursor-pointer bg-opacity-5 w-[40px] h-[40px] flex items-center justify-center rounded-xl">
                     <i class="fa-solid fa-chevron-left"></i>
                 </div>
                 <h3 class="text-[15px] text-[#1C192B] font-[600]">Messages</h3>
@@ -255,15 +255,21 @@
 
                 <div class="w-full sm:w-[480px] max-w-[480px]">
                     <div class="grid mb-2 grid-cols-2 items-center gap-x-6">
-                        <div class="h-full flex items-center cursor-pointer">
+
+
+                        <div @click="movetoLeft" class="h-full flex items-center cursor-pointer">
                             <img src="img/stars.png" class="w-[25px]" alt="">
                             <h1 class="bg-gradient-to-r font-bold ml-2 text-xl from-light_blue to-dark_blue text-transparent bg-clip-text text-fill-transparent">Get Started</h1>
                         </div>
-                        <div class="h-full flex items-center justify-end gap-x-5 cursor-pointer">
+
+
+                        <div @click="movetoRight" class="h-full flex items-center justify-end gap-x-5 cursor-pointer">
+
                             <div class="w-[50px] h-full relative sm:block hidden ">
                                 <img class="absolute z-40 top-0 right-0" src="img/diamond.png" alt="">
                                 <img src="img/loading.png" class="w-[14px] left-1 absolute bottom-0" alt="">
                             </div>
+
                             <div class="relative">
                                 <img class="absolute right-0 top-0 translate-x-3 -translate-y-2 w-[15px]" src="img/loading.png" alt="">
                                 <h1 class="bg-gradient-to-r font-bold text-md from-light_blue to-dark_blue text-transparent bg-clip-text text-fill-transparent">You earned 20 500</h1>
@@ -271,8 +277,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="bg-white h-[15px] w-full rounded-full relative">
-                        <div class="bg-gradient-to-r from-light_blue to-dark_blue mx-[10px] h-[7px] w-[45%] absolute left-0 top-[50%] translate-y-[-50%] rounded-full"></div>
+                    <div class="bg-white h-[15px] w-full rounded-full transition relative">
+                        <div 
+                        class='bg-gradient-to-r left-0 from-light_blue to-dark_blue mx-[10px] h-[7px] w-[45%] absolute top-[50%] translate-y-[-50%] rounded-full'></div>
                     </div>
                 </div>
 
@@ -360,8 +367,8 @@
        
       </div>
 
-      <Earned :iscompleted="task2.completed"/>
-      <Completed :iscompleted="task1.completed"/>
+      <!-- <Earned :iscompleted="task1.completed" :done="CardDone" :Yes="CardYess"/> -->
+      <!-- <Completed :iscompleted="task1.completed" :done="CardDone" :Yes="CardYess"/> -->
     </div>
 
 
@@ -376,14 +383,27 @@
 
 const isSidebarVisible = ref(true);
 
+const CardDone = ref(true);
+
+const CardYess = ref(false);
+
 const hideSidebar = () => {
   isSidebarVisible.value = false;
 };
 
-const inboxName = ref('');
+const showSidebar = () =>{
+    isSidebarVisible.value = true;
+}
+
+const updateYes = (newVal)=>{
+    CardYess = newVal;
+    console.log(CardYess)
+}
+
+const inboxName = ref('Vivateck');
 
   
-  import {
+import {
     FolderIcon,
     HomeIcon,
     UsersIcon,
@@ -422,6 +442,7 @@ const task1 = reactive({
 const task2 = reactive({
   completed: false,
 })
+
 
 </script>
 
@@ -493,6 +514,10 @@ const task2 = reactive({
     background-size: contain;
     background-repeat: no-repeat;
     /* background: url('/img/check.png'); */
+}
+
+.animation-bar{
+    transition: all 0.9s ease-in-out;
 }
 
 </style>
