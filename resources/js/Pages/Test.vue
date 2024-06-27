@@ -233,7 +233,7 @@
                                 <span class="flex items-center gap-x-3">
                                     <!-- <component :is="message.icon" class="text-gray-400 h-6 w-6 shrink-0" aria-hidden="true" /> -->
                                     <img class="w-[25px]" :src="message.iconSrc" alt="">
-                                    <span >{{message.name}}</span><sup>{{ message.sym }}</sup>
+                                    <span >{{message.name}}<sup>{{ message.sym }}</sup></span>
                                 </span>
                                 <span class="text-[10px] font-semibold">
                                     {{ message.description }}
