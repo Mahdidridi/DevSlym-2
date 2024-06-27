@@ -1,7 +1,7 @@
 <template>
-    <div v-if="iscompleted && isDone"  @click="handleDone" class="w-full z-50 h-screen overflow-hidden fixed bg-black/60"></div>
+    <div v-if="done"  @click="handleDone" class="w-full z-50 h-screen overflow-hidden fixed bg-black/60"></div>
     
-    <div v-if="iscompleted && isDone" class="fixed top-0 z-50 left-0 flex bg-transparent items-center justify-center w-full h-screen">
+    <div v-if="done" class="fixed top-0 z-50 left-0 flex bg-transparent items-center justify-center w-full h-screen">
     
 
         <div class="bg-bg_gray mt-10 tems-center flex flex-col gap-y-4 justify-center items-center rounded-3xl p-6 w-[470px]">
@@ -29,7 +29,7 @@
                 </div>
                 
             </div>
-            <button @click="handleDone" class="z-50 font-[700] shadow-md w-full text-sm bg-gradient-to-r from-light_blue to-dark_blue py-4 rounded-xl text-center text-white">Done</button>
+            <button @click="DoneCard" class="z-50 font-[700] shadow-md w-full text-sm bg-gradient-to-r from-light_blue to-dark_blue py-4 rounded-xl text-center text-white">Done</button>
 
         </div>
     
@@ -41,21 +41,16 @@
 <script>
 
 export default {
+    emits: ['handleDone'], 
     props: {
-        iscompleted: {
+        done: {
             type: Boolean,
-            required: true
-        }
-    },
-    data() {
-        return {
-            // iscompleted: true,
-            isDone: true
-        }
+            // required: true
+        },
     },
     methods: {
-        handleDone() {
-            this.isDone = false;
+        DoneCard(){
+            this.$emit('handleDone',false);
         }
   }
 }

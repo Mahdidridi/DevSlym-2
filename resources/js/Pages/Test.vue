@@ -367,8 +367,8 @@
        
       </div>
 
-      <!-- <Earned :iscompleted="task1.completed" :done="CardDone" :Yes="CardYess"/> -->
-      <!-- <Completed :iscompleted="task1.completed" :done="CardDone" :Yes="CardYess"/> -->
+      <Earned @handleYess="handleYess" :iscompleted="task1.completed" :done="CardDone" :Yes="CardYess"/>
+      <Completed @handleDone="handleDone" :done="CardDone"/>
     </div>
 
 
@@ -383,7 +383,7 @@
 
 const isSidebarVisible = ref(true);
 
-const CardDone = ref(true);
+const CardDone = ref(false);
 
 const CardYess = ref(false);
 
@@ -395,9 +395,13 @@ const showSidebar = () =>{
     isSidebarVisible.value = true;
 }
 
-const updateYes = (newVal)=>{
-    CardYess = newVal;
-    console.log(CardYess)
+const handleYess = (val)=> {
+    CardYess.value = val;
+    CardDone.value = true;
+}
+
+const handleDone = (val) =>{
+    CardDone.value = val;
 }
 
 const inboxName = ref('Vivateck');

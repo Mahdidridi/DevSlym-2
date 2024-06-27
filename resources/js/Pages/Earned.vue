@@ -21,7 +21,7 @@
         </h2>
 
         <button 
-        @click="handleYess"
+        @click="CloseCard"
         class="font-medium shadow-md text-sm bg-gradient-to-r from-light_blue to-dark_blue py-4 rounded-xl text-center text-white">
         Yeahhhhhhhhhhhhh!
         </button>
@@ -35,6 +35,7 @@
 
 <script>
 export default {
+    emits: ['handleYess'], 
     props: {
         iscompleted: {
             type: Boolean,
@@ -42,26 +43,16 @@ export default {
         },
         done: {
             type: Boolean,
-            required: true
+            // required: true
         },
         Yes: {
             type: Boolean,
             // required: false
         }
     },
-    data() {
-        // return {
-        //     iscompleted: true,
-        //     isDone: true
-        // }
-    },
     methods: {
-        // handleDone() {
-        //     this.isDone = false;
-        // }
-        handleYess() {
-            // this.$emit('updateYes', true);
-            Yes = true;
+        CloseCard(){
+            this.$emit('handleYess',true);
         }
   }
 }
