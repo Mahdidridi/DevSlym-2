@@ -1,7 +1,7 @@
 <template>
     <div class="flex min-h-full flex-col bg-img">
 
-        <aside v-if="isSidebarVisible" class="w-full md:hidden block min-h-screen fixed top-0 z-50 left-0">
+        <aside v-if="isSidebarVisible" style="z-index:999" class="w-full md:hidden block min-h-screen fixed top-0 left-0">
           <!-- <div class="border h-screen w-full bg-white px-6">
                 <div class="flex items-center justify-between py-4">
                     <h3 class=" font-medium">DM Setting</h3>
@@ -199,27 +199,31 @@
                     <div class="text-[10px] font-[600] uppercase leading-6 text-gray-400 tracking-wider">Manage inbox</div>
                     <ul role="list" class="-mx-2 space-y-1 mt-4">
                         <li>
-                            <a class='hover:bg-light_blue_color cursor-pointer list group flex gap-x-3 rounded-xl items-center p-2 text-sm font-semibold leading-6'>
-                                <i class="fa-solid fa-inbox text-xl icon-background-color-hover text-bg_dark_gray"></i>
-                                <span class="background-color-hover text-[14px]">Inbox</span>
+                            <a class='cursor-pointer list group flex gap-x-3 rounded-xl items-center p-2 text-sm font-semibold leading-6'>
+                                <!-- <i class="fa-solid fa-inbox text-xl icon-background-color-hover text-bg_dark_gray"></i> -->
+                                <img src="img/inboxIcon.png" class="w-[24px]"/>
+                                <span class="text-[14px]">Inbox</span>
                             </a>
                         </li>
                         <li>
-                            <a class='hover:bg-light_blue_color cursor-pointer list group flex gap-x-3 rounded-xl items-center p-2 text-sm font-semibold leading-6'>
-                                <i class="fa-solid fa-comment-dots icon-background-color-hover text-xl text-bg_dark_gray"></i>
-                                <span class="background-color-hover text-[14px]">Discussion Rules</span>
+                            <a class='cursor-pointer list group flex gap-x-3 rounded-xl items-center p-2 text-sm font-semibold leading-6'>
+                                <!-- <i class="fa-solid fa-comment-dots icon-background-color-hover text-xl text-bg_dark_gray"></i> -->
+                                <img src="img/chatIcon.png" class="w-[23px]"/>
+                                <span class="text-[14px]">Discussion Rules</span>
                             </a>
                         </li>
                         <li>
-                            <a class='hover:bg-light_blue_color cursor-pointer list group flex gap-x-3 rounded-xl items-center p-2 text-sm font-semibold leading-6'>
-                                <i class="fa-solid fa-address-book icon-background-color-hover text-xl text-bg_dark_gray"></i>
-                                <span class="background-color-hover text-[14px]">Adress Book</span>
+                            <a class='cursor-pointer list group flex gap-x-3 rounded-xl items-center p-2 text-sm font-semibold leading-6'>
+                                <!-- <i class="fa-solid fa-address-book icon-background-color-hover text-xl text-bg_dark_gray"></i> -->
+                                <img src="img/AdressBookIcon.png" class="w-[22px]"/>
+                                <span class="text-[14px]">Adress Book</span>
                             </a>
                         </li>
                         <li>
-                            <a class='hover:bg-light_blue_color cursor-pointer list group flex gap-x-3 rounded-xl items-center p-2 text-sm font-semibold leading-6'>
-                                <i class="fa-solid fa-bahai icon-background-color-hover text-xl text-bg_dark_gray"></i>
-                                <span class="background-color-hover text-[14px]">Zapier</span>
+                            <a class='cursor-pointer list group flex gap-x-3 rounded-xl items-center p-2 text-sm font-semibold leading-6'>
+                                <!-- <i class="fa-solid fa-bahai icon-background-color-hover text-xl text-bg_dark_gray"></i> -->
+                                <img src="img/zapierIcon.png" class="w-[24px]"/>
+                                <span class="text-[14px]">Zapier</span>
                             </a>
                         </li>
                     </ul>
@@ -247,8 +251,7 @@
           </div>
         </aside>
 
-        
-  
+
         <!-- Content -->
         <main class="flex-1 py-10 w-full background-color rounded-l-lg rounded-r-2xl flex flex-col items-center justify-center">
             <div class="px-4 sm:px-6 lg:px-8 flex flex-col items-center">
@@ -257,13 +260,13 @@
                     <div class="grid mb-2 grid-cols-2 items-center gap-x-6">
 
 
-                        <div @click="movetoLeft" class="h-full flex items-center cursor-pointer">
+                        <div class="h-full flex items-center cursor-pointer">
                             <img src="img/stars.png" class="w-[25px]" alt="">
                             <h1 class="bg-gradient-to-r font-bold ml-2 text-xl from-light_blue to-dark_blue text-transparent bg-clip-text text-fill-transparent">Get Started</h1>
                         </div>
 
 
-                        <div @click="movetoRight" class="h-full flex items-center justify-end gap-x-5 cursor-pointer">
+                        <div class="h-full flex items-center justify-end gap-x-5 cursor-pointer">
 
                             <div class="w-[50px] h-full relative sm:block hidden ">
                                 <img class="absolute z-40 top-0 right-0" src="img/diamond.png" alt="">
@@ -296,13 +299,31 @@
                             <div class="mt-1">
                                 <label for="" class="text-xs font-semibold">Inbox Color</label>
                                 <div class="flex mt-2 mb-4 items-center justify-between">
-                                    <IconInfo :Name="inboxName" bgColor="bg-pink_color" iconColor="text-pink_color" iconText="Pink Icon Info" />
-                                    <IconInfo :Name="inboxName" bgColor="bg-purple_color" iconColor="text-purple_color" iconText="Purple Icon Info" />
-                                    <IconInfo :Name="inboxName" bgColor="bg-blue_color" iconColor="text-blue_color" iconText="Blue Icon Info" />
-                                    <IconInfo :Name="inboxName" bgColor="bg-light_blue_icon" iconColor="text-light_blue_icon" iconText="Light Blue Icon Info" />
+                                    <!-- <IconInfo :Name="inboxName" bgColor="bg-pink_color" iconColor="text-pink_color" iconText="Pink Icon Info" /> -->
+                                    <span>
+                                        <i class="fa-solid fa-inbox text-lg cursor-pointer text-pink_color"></i>
+                                    </span>
+                                    <!-- <IconInfo :Name="inboxName" bgColor="bg-purple_color" iconColor="text-purple_color" iconText="Purple Icon Info" /> -->
+                                    <span>
+                                        <i class="fa-solid fa-inbox text-lg cursor-pointer text-purple_color"></i>
+                                    </span>
+                                    <!-- <IconInfo :Name="inboxName" bgColor="bg-blue_color" iconColor="text-blue_color" iconText="Blue Icon Info" /> -->
+                                    <span>
+                                        <i class="fa-solid fa-inbox text-lg cursor-pointer text-blue_color"></i>
+                                    </span>
+                                    <!-- <IconInfo :Name="inboxName" bgColor="bg-light_blue_icon" iconColor="text-light_blue_icon" iconText="Light Blue Icon Info" /> -->
+                                    <span>
+                                        <i class="fa-solid fa-inbox text-lg cursor-pointer text-light_blue_icon"></i>
+                                    </span>
                                     <IconInfo :Name="inboxName" bgColor="bg-red_color" iconColor="text-red_color" iconText="Red Icon Info" />
-                                    <IconInfo :Name="inboxName" bgColor="bg-yyelow_color" iconColor="text-yyelow_color" iconText="Yellow Icon Info" />
-                                    <IconInfo :Name="inboxName" bgColor="bg-grey_color" iconColor="text-grey_color" iconText="Grey Icon Info" />
+                                    <!-- <IconInfo :Name="inboxName" bgColor="bg-yyelow_color" iconColor="text-yyelow_color" iconText="Yellow Icon Info" /> -->
+                                    <span>
+                                        <i class="fa-solid fa-inbox text-lg cursor-pointer text-yyelow_color"></i>
+                                    </span>
+                                    <!-- <IconInfo :Name="inboxName" bgColor="bg-grey_color" iconColor="text-grey_color" iconText="Grey Icon Info" /> -->
+                                    <span>
+                                        <i class="fa-solid fa-inbox text-lg cursor-pointer text-grey_color"></i>
+                                    </span>
                                 </div>
                             </div>
                             
@@ -316,14 +337,15 @@
                                     <input 
                                         type="checkbox" 
                                         class="checkbox"
+                                        @change="handleCheckboxChange1"
                                         v-model="task1.completed"
                                         id="inbox"
                                     />
                                     <span :class="[task1.completed ? 'text-[#514F5F] line-through' : 'text-[#1C192B]','font-bold']">Create more inbox</span>
                                 </label>
-                                <h2 class="text-md font-semibold text-center bg-gradient-to-r from-light_blue to-dark_blue text-transparent bg-clip-text text-fill-transparent">
-                                    <component is="CheckIcon" class="" aria-hidden="true" /><i class="fa-solid fa-check"></i> <span class="text-[16px]">500</span> <span class="text-xs">XP</span>
-                                </h2>
+                                <span class="text-md font-semibold flex items-center text-center bg-gradient-to-r from-light_blue to-dark_blue text-transparent bg-clip-text text-fill-transparent">
+                                    <img src="img/checkIcon.png" class="h-[9px] mr-1"/> <span class="text-[16px]">{{task1.earned}}</span> <span class="text-xs ml-0.5 mt-0.5">XP</span>
+                                </span>
                             </div>
                             
                             <p class="text-[#8C8D90] text-[12px] pl-9 pt-2">Create more inbox, welcome your new contact by a message.</p>
@@ -345,6 +367,7 @@
                                         type="checkbox" 
                                         class="checkbox"
                                         v-model="task2.completed"
+                                        @change="handleCheckboxChange2"
                                         id="message"
                                     />
                                     <span class="font-bold flex items-start text-opacity-80">
@@ -354,20 +377,42 @@
                                     </span>
                                 </label>
                                 <h2 class="text-md font-semibold text-center bg-gradient-to-r from-light_blue to-dark_blue text-transparent bg-clip-text text-fill-transparent">
-                                    <component is="CheckIcon" class="" aria-hidden="true" />+ 100 <span class="text-xs">XP</span>
+                                    <component is="CheckIcon" class="" aria-hidden="true" /><span class="-mr-0.5">+</span> {{task2.earned}} <span class="text-xs">XP</span>
                                 </h2>
                             </div>
                             
                             <p class="text-[#8C8D90] text-[12px] pl-9 pt-2">Create more inbox, welcome your new contact by a message.</p>
                     </div>
                 </div>
+
+                <button
+                @click="handleDone(true)"
+                class="font-medium mt-6 w-full text-md bg-gradient-to-r from-light_blue to-dark_blue py-4 rounded-xl text-center text-white"
+                >
+                    Finishe the tour
+                </button>
             </div>
         </main>
   
        
       </div>
 
-      <Earned @handleYess="handleYess" :iscompleted="task1.completed" :done="CardDone" :Yes="CardYess"/>
+    <Earned 
+        @handleYess="handleYess1" 
+        :completed="task1.completed"  
+        :earned="task1.earned"
+        :Yes="CloseEarned1"
+    />
+
+    <Earned 
+        @handleYess="handleYess2" 
+        :completed="task2.completed"  
+        :earned="task2.earned"
+        :Yes="CloseEarned2"
+    />
+
+
+
       <Completed @handleDone="handleDone" :done="CardDone"/>
     </div>
 
@@ -385,19 +430,32 @@ const isSidebarVisible = ref(true);
 
 const CardDone = ref(false);
 
-const CardYess = ref(false);
+const CloseEarned1 = ref(false);
+
+const CloseEarned2 = ref(false);
 
 const hideSidebar = () => {
   isSidebarVisible.value = false;
 };
 
+const handleCheckboxChange1 = () =>{
+    CloseEarned1.value = false;
+}
+
+const handleCheckboxChange2 = () =>{
+    CloseEarned2.value = false;
+}
+
 const showSidebar = () =>{
     isSidebarVisible.value = true;
 }
 
-const handleYess = (val)=> {
-    CardYess.value = val;
-    CardDone.value = true;
+const handleYess1 = (val)=> {
+    CloseEarned1.value = val;
+}
+
+const handleYess2 = (val)=> {
+    CloseEarned2.value = val;
 }
 
 const handleDone = (val) =>{
@@ -441,10 +499,12 @@ import { reactive } from 'vue'
 
 const task1 = reactive({
   completed: false,
+  earned : 500,
 })
 
 const task2 = reactive({
   completed: false,
+  earned : 100,
 })
 
 

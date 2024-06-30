@@ -1,5 +1,5 @@
 <template>
-    <div v-if="done"  @click="handleDone" class="w-full z-50 h-screen overflow-hidden fixed bg-black/60"></div>
+    <div v-if="done"  @click="DoneCard" class="w-full z-50 h-screen overflow-hidden fixed bg-black/60"></div>
     
     <div v-if="done" class="fixed top-0 z-50 left-0 flex bg-transparent items-center justify-center w-full h-screen">
     
